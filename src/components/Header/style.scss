@@ -1,0 +1,11 @@
+.app-header { 
+    border-bottom: 1px solid #ccc;
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+    background-color: #343A40;
+    & .app-title h1 {
+      color:#fff
+    }
+
+  }
