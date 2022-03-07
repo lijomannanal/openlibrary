@@ -5,6 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "airbnb",
         "airbnb-typescript"
     ],
     "parser": "@typescript-eslint/parser",
@@ -22,8 +23,11 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "import/extensions": "off", 
-        "import/no-extraneous-dependencies": "off",
+        "import/extensions": ["error", "ignorePackages", {  "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never" } ], 
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
         "indent": "off",
         "@typescript-eslint/indent": ["error", 2],
@@ -41,6 +45,11 @@
     "settings": {
         "react": {
             "version": "17.0.2"
+        },
+        "import/resolver": {
+            "node": {
+              "extensions": [ ".ts", ".tsx"]
+            }
         }
     }
 }
